@@ -1010,7 +1010,7 @@
                                     <div class="product text-center">
                                         <figure class="product-media">
                                             <a href="{% url 'productdetail' product.name %}">
-                                                <img src="{% static 'marketplace/images/shop/1.jpg' %}" alt="Product" width="300"
+                                                <img src="{{ product.image.url }}" alt="Product" width="300"
                                                     height="338" />
                                             </a>
                                             <div class="product-action-horizontal">

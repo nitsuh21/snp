@@ -1,7 +1,8 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from . import views
 from django.contrib.auth import views as auth_views
+from .router import router
 
 urlpatterns = [
     path('',views.marketplace,name='marketplace'),
@@ -12,4 +13,5 @@ urlpatterns = [
     path('addproduct',views.addproduct,name='addproduct'),
     path('createshop',views.createshop,name='createshop'),
     path('add',views.add,name='add'),
+    path('api/',include(router.urls))
 ]
