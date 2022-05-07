@@ -3,4 +3,4 @@ from rest_framework import routers
 from .models import Post
 
 router = routers.DefaultRouter()
-router.register('post',PostViewset)
+router.register('posts',PostViewset)
