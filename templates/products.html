@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <a href="{% url 'addproduct' %}">add a product</a>
+    <h2>open your shop ryt now</h2>
+    <form action="createshop" method="post">
+        {% csrf_token %}
+        <input type="text" name="shopname" id="">
+        <button>open now</button>
+    </form>
+    <h2>shops</h2>
+    {% for shop in shops %}
+    <p>{{shop.name}}</p>
+    {% endfor %}
+    <h2>products</h2>
+    {% for product in products %}
+    <p><strong>product:</strong>{{product.name}}</p>
+    <p><strong>shopname:</strong>{{product.shop.name}}</p>
+    <P><strong>affiliate link:</strong><a href="">{{product.affiliatelink}}</a></P><br>
+    <p>{{product.hasaffiliate}}</p>
+    {% endfor %}
+    <h2>affiliates</h2>
+    {% for product in affiliatedproducts %}
+    <p><strong>product:</strong>{{product.name}}</p>
+    <p><strong>shopname:</strong>{{product.shop.name}}</p>
+    <P><strong>affiliate link:</strong><a href="">{{product.affiliatelink}}</a></P><br>
+    {% endfor %}
+</body>
+</html>
