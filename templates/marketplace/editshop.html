@@ -1,290 +1,133 @@
 {% load static %}
-{% load thumbnail %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<title>Social Networking Platform</title>
+<!-- Mirrored from portotheme.com/html/wolmart/vendor-wcfm-store-product-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 13:19:36 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="{% static 'marketplace/images/icons/favicon.png' %}">
+    <title>Shop Profile</title>
 
-		<!-- WebFont.js -->
-		<script>
-			WebFontConfig = {
-				google: { families: ['Poppins:400,500,600,700'] }
-			};
-			(function (d) {
-				var wf = d.createElement('script'), s = d.scripts[0];
-				wf.src = "{% static 'marketplace/js/webfont.js' %}";
-				wf.async = true;
-				s.parentNode.insertBefore(wf, s);
-			})(document);
-		</script>
+    <meta name="keywords" content="Marketplace ecommerce responsive HTML5 Template" />
+    <meta name="description" content="Wolmart is powerful marketplace &amp; ecommerce responsive Html5 Template.">
+    <meta name="author" content="D-THEMES">
 
-		<link rel="preload" href="{% static 'marketplace/vendor/fontawesome-free/webfonts/fa-regular-400.woff2' %}" as="font" type="font/woff2"
-			crossorigin="anonymous">
-		<link rel="preload" href="{% static 'marketplace/vendor/fontawesome-free/webfonts/fa-solid-900.woff2' %}" as="font" type="font/woff2"
-			crossorigin="anonymous">
-		<link rel="preload" href="{% static 'marketplace/vendor/fontawesome-free/webfonts/fa-brands-400.woff2' %}" as="font" type="font/woff2"
-				crossorigin="anonymous">
-		<link rel="preload" href="{% static 'marketplace/fonts/wolmart87d5.woff?png09e' %}" as="font" type="font/woff" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'marketplace/images/icons/favicon.png' %}">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/fontawesome-free/css/all.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/animate/animate.min.css' %}">
+    <!-- WebFont.js -->
+    <script>
+        WebFontConfig = {
+            google: { families: ['Poppins:400,500,600,700'] }
+        };
+        ( function ( d ) {
+            var wf = d.createElement( 'script' ), s = d.scripts[0];
+            wf.src = "{% static 'marketplace/js/webfont.js' %}";
+            wf.async = true;
+            s.parentNode.insertBefore( wf, s );
+        } )( document );
+    </script>
 
-		<!-- Plugins CSS -->
-		<link rel="stylesheet" href="{% static 'marketplace/vendor/swiper/swiper-bundle.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/nouislider/nouislider.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/magnific-popup/magnific-popup.min.css' %}">
+    <link rel="preload" href="{% static 'marketplace/assets/vendor/fontawesome-free/webfonts/fa-regular-400.woff2' %}" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="{% static 'marketplace/vendor/fontawesome-free/webfonts/fa-solid-900.woff2' %}" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
-        <!-- Default CSS -->
-       <link rel="stylesheet" type="text/css" href="{% static 'marketplace/css/style.min.css' %}">
-	</head>
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/animate/animate.min.css' %}">
+
+    <!-- preloading link
+    <link rel="preload" href="assets/fonts/venedor.woff" as="font" type="font/woff" crossorigin="anonymous"> -->
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'marketplace/vendor/swiper/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/animate/animate.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/magnific-popup/magnific-popup.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/nouislider/nouislider.min.css' %}">
+
+    <!-- Default CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'marketplace/css/style.min.css' %}">
+
+</head>
 <body>
-	<div class="page-wrapper">
+    <!-- Start of Pgae Wrapper -->
+    <div class="page-wrapper">
         <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
         <!-- Start of Header -->
         {% include 'partials/marketplace/header1.html' %}
         <!-- End of Header -->
+
+
+        <!-- Start of Main -->
         <main class="main">
             <!-- Start of Breadcrumb -->
             <nav class="breadcrumb-nav">
                 <div class="container">
                     <ul class="breadcrumb bb-no">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="shop-banner-sidebar.html">Shop</a></li>
-                        <li>Off Canvas</li>
+                        <li><a href="demo1.html">Home</a></li>
+                        <li><a href="#">Vendor</a></li>
+                        <li><a href="#">WCFM</a></li>
+                        <li>Store</li>
                     </ul>
                 </div>
             </nav>
             <!-- End of Breadcrumb -->
 
-            <!-- Start of Page Content -->
-            <div class="page-content mb-10">
+            <!-- Start of Pgae Contetn -->
+            <div class="page-content mb-8">
                 <div class="container">
-                    {% include 'partials/marketplace/categories.html' %}
-                    <div class="shop-content">
-                        <!-- Start of Shop Main Content -->
-                        <div class="main-content">
-                            <nav class="toolbox sticky-toolbox sticky-content fix-top">
-                                <div class="toolbox-left">
-                                    <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle 
-                                        btn-icon-left"><i class="w-icon-category"></i><span>Filters</span></a>
-                                    <div class="toolbox-item toolbox-sort select-box text-dark">
-                                        <label>Sort By :</label>
-                                        <select name="orderby" class="form-control">
-                                            <option value="default" selected="selected">Default sorting</option>
-                                            <option value="popularity">Sort by popularity</option>
-                                            <option value="rating">Sort by average rating</option>
-                                            <option value="date">Sort by latest</option>
-                                            <option value="price-low">Sort by price: low to high</option>
-                                            <option value="price-high">Sort by price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="toolbox-right">
-                                    <div class="toolbox-item toolbox-show select-box">
-                                        <select name="count" class="form-control">
-                                            <option value="9">Show 9</option>
-                                            <option value="12" selected="selected">Show 12</option>
-                                            <option value="24">Show 24</option>
-                                            <option value="36">Show 36</option>
-                                        </select>
-                                    </div>
-                                    <div class="toolbox-item toolbox-layout">
-                                        <a href="shop-off-canvas.html" class="icon-mode-grid btn-layout active">
-                                            <i class="w-icon-grid"></i>
-                                        </a>
-                                        <a href="shop-list.html" class="icon-mode-list btn-layout">
-                                            <i class="w-icon-list"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </nav>
-                            <div class="product-wrapper row cols-lg-5 cols-md-4 cols-sm-3 cols-2">
-                                {% for product in products%}
-                                <div class="product-wrap" style="max-height: 600px;">
-                                    <div class="product text-center" >
-                                        <figure class="product-media">
-                                            <a href="{% url 'productdetail' product.id %}">
-                                                <!--{% thumbnail product.image "100x100" as im %}
-                                                
-                                                    {% endthumbnail %} -->
-                                                    <img src="{{ product.image.url }}" alt="Product" style="min-height: 300px;max-height: 300px;"/>
-                                            </a>
-                                            <div class="product-action-horizontal">
-                                                <a href="{% url 'addtocart' product.id %}"
-                                                    title="Add to cart"> Add to cart</a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                    title="Wishlist"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                    title="Compare"></a>
-                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                    title="Quick View"></a>
-                                            </div>
-                                        </figure>
-                                        <div class="product-details">
-                                            <div class="product-cat">
-                                                <a href="shop-banner-sidebar.html">{{product.type}}</a>
-                                            </div>
-                                            <h3 class="product-name">
-                                                <a href="product-default.html">{{product.name}}</a>
-                                            </h3>
-                                            <div class="ratings-container">
-                                                <div class="ratings-full">
-                                                    <span class="ratings" style="width: 75%;"></span>
-                                                    <span class="tooltiptext tooltip-top"></span>
-                                                </div>
-                                                <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
-                                            </div>
-                                            <div class="product-pa-wrapper">
-                                                <div class="product-price">
-                                                    ${{product.sale_price}} - 
-                                                    ${{product.price}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-
-                            <div class="toolbox toolbox-pagination justify-content-between">
-                                <p class="showing-info mb-2 mb-sm-0">
-                                    Showing<span>1-13 of 60</span>Products
-                                </p>
-                                <ul class="pagination">
-                                    <li class="prev disabled">
-                                        <a href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                                            <i class="w-icon-long-arrow-left"></i>Prev
-                                        </a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="next">
-                                        <a href="#" aria-label="Next">
-                                            Next<i class="w-icon-long-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="inputAddress">Name</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="{{shop.name}}">
+                          </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="{{shop.email}}">
+                          </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
-                        <!-- End of Shop Main Content -->
-
-                        <!-- Start of Sidebar, Shop Sidebar -->
-                        <aside class="sidebar shop-sidebar left-sidebar sticky-sidebar-wrapper">
-                            <!-- Start of Sidebar Overlay -->
-                            <div class="sidebar-overlay"></div>
-                            <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
-
-                            <!-- Start of Sidebar Content -->
-                            <div class="sidebar-content scrollable">
-                                <div class="filter-actions">
-                                    <label>Filter :</label>
-                                    <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
-                                </div>
-                                <!-- Start of Collapsible widget -->
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title"><span>All Categories</span></h3>
-                                    <ul class="widget-body filter-items search-ul">
-                                        <li><a href="#">Accessories</a></li>
-                                        <li><a href="#">Babies</a></li>
-                                        <li><a href="#">Beauty</a></li>
-                                        <li><a href="#">Decoration</a></li>
-                                        <li><a href="#">Electronics</a></li>
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">Food</a></li>
-                                        <li><a href="#">Furniture</a></li>
-                                        <li><a href="#">Kitchen</a></li>
-                                        <li><a href="#">Medical</a></li>
-                                        <li><a href="#">Sports</a></li>
-                                        <li><a href="#">Watches</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End of Collapsible Widget -->
-
-                                <!-- Start of Collapsible Widget -->
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title"><span>Price</span></h3>
-                                    <div class="widget-body">
-                                        <ul class="filter-items search-ul">
-                                            <li><a href="#">$0.00 - $100.00</a></li>
-                                            <li><a href="#">$100.00 - $200.00</a></li>
-                                            <li><a href="#">$200.00 - $300.00</a></li>
-                                            <li><a href="#">$300.00 - $500.00</a></li>
-                                            <li><a href="#">$500.00+</a></li>
-                                        </ul>
-                                        <form class="price-range">
-                                            <input type="number" name="min_price" class="min_price text-center"
-                                                placeholder="$min"><span class="delimiter">-</span><input type="number"
-                                                name="max_price" class="max_price text-center" placeholder="$max"><a
-                                                href="#" class="btn btn-primary btn-rounded">Go</a>
-                                        </form>
-                                    </div>
-                                </div>
-                                <!-- End of Collapsible Widget -->
-
-                                <!-- Start of Collapsible Widget -->
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title"><span>Size</span></h3>
-                                    <ul class="widget-body filter-items item-check mt-1">
-                                        <li><a href="#">Extra Large</a></li>
-                                        <li><a href="#">Large</a></li>
-                                        <li><a href="#">Medium</a></li>
-                                        <li><a href="#">Small</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End of Collapsible Widg    et -->
-
-                                <!-- Start of Collapsible Widget -->
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title"><span>Brand</span></h3>
-                                    <ul class="widget-body filter-items item-check mt-1">
-                                        <li><a href="#">Elegant Auto Group</a></li>
-                                        <li><a href="#">Green Grass</a></li>
-                                        <li><a href="#">Node Js</a></li>
-                                        <li><a href="#">NS8</a></li>
-                                        <li><a href="#">Red</a></li>
-                                        <li><a href="#">Skysuite Tech</a></li>
-                                        <li><a href="#">Sterling</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End of Collapsible Widget -->
-
-                                <!-- Start of Collapsible Widget -->
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title"><span>Color</span></h3>
-                                    <ul class="widget-body filter-items item-check">
-                                        <li><a href="#">Black</a></li>
-                                        <li><a href="#">Blue</a></li>
-                                        <li><a href="#">Brown</a></li>
-                                        <li><a href="#">Green</a></li>
-                                        <li><a href="#">Grey</a></li>
-                                        <li><a href="#">Orange</a></li>
-                                        <li><a href="#">Yellow</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End of Collapsible Widget -->
-                            </div>
-                            <!-- End of Sidebar Content -->
-                        </aside>
-                        <!-- End of Shop Sidebar -->
-                    </div>
-                    <!-- End of Shop Content -->
-
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                              Check me out
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </form>
                 </div>
             </div>
             <!-- End of Page Content -->
         </main>
+        <!-- End of Main -->
+
         <!-- Start of Footer -->
         <footer class="footer appear-animate" data-animation-options="{
             'name': 'fadeIn'
@@ -322,7 +165,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <div class="widget widget-about">
-                                <a href="/" class="logo-footer">
+                                <a href="demo1.html" class="logo-footer">
                                     <img src="{% static 'marketplace/images/logo_footer.png' %}" alt="logo-footer" width="144"
                                         height="45" />
                                 </a>
@@ -361,7 +204,7 @@
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="{% url 'cart' %}">View Cart</a></li>
+                                    <li><a href="cart.html">View Cart</a></li>
                                     <li><a href="login.html">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
                                     <li><a href="wishlist.html">My Wishlist</a></li>
@@ -407,7 +250,7 @@
                             <a href="#">Sunglasses</a>
                             <a href="#">Boots</a>
                             <a href="#">Rayban</a>
-                            <a href="#">Acccessories</a>
+                            <a href="#">Accessories</a>
                         </div>
                         <div class="category-box">
                             <h6 class="category-name">Home, Garden & Kitchen:</h6>
@@ -475,11 +318,11 @@
         </footer>
         <!-- End of Footer -->
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Page-wrapper -->
 
     <!-- Start of Sticky Footer -->
     <div class="sticky-footer sticky-content fix-bottom">
-        <a href="/" class="sticky-link active">
+        <a href="demo1.html" class="sticky-link active">
             <i class="w-icon-home"></i>
             <p>Home</p>
         </a>
@@ -492,17 +335,16 @@
             <p>Account</p>
         </a>
         <div class="cart-dropdown dir-up">
-            <a href="{% url 'cart' %}" class="sticky-link">
+            <a href="cart.html" class="sticky-link">
                 <i class="w-icon-cart"></i>
                 <p>Cart</p>
             </a>
             <div class="dropdown-box">
                 <div class="products">
-                    {% for product in cart %}
                     <div class="product product-cart">
                         <div class="product-detail">
                             <h3 class="product-name">
-                                <a href="product-default.html">{{product}}<br>tic
+                                <a href="product-default.html">Beige knitted elas<br>tic
                                     runner shoes</a>
                             </h3>
                             <div class="price-box">
@@ -512,14 +354,34 @@
                         </div>
                         <figure class="product-media">
                             <a href="#">
-                                <img src="assets/images/cart/product-1.jpg" alt="product" height="84" width="94" />
+                                <img src="{% static 'marketplace/images/cart/product-1.jpg' %}" alt="product" height="84" width="94" />
                             </a>
                         </figure>
                         <button class="btn btn-link btn-close" aria-label="button">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    {% endfor %}
+
+                    <div class="product product-cart">
+                        <div class="product-detail">
+                            <h3 class="product-name">
+                                <a href="https://www.portotheme.com/html/wolmart/product.html">Blue utility pina<br>fore
+                                    denim dress</a>
+                            </h3>
+                            <div class="price-box">
+                                <span class="product-quantity">1</span>
+                                <span class="product-price">$32.99</span>
+                            </div>
+                        </div>
+                        <figure class="product-media">
+                            <a href="#">
+                                <img src="{% static 'marketplace/images/cart/product-2.jpg' %}" alt="product" width="84" height="94" />
+                            </a>
+                        </figure>
+                        <button class="btn btn-link btn-close" aria-label="button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="cart-total">
@@ -528,7 +390,7 @@
                 </div>
 
                 <div class="cart-action">
-                    <a href="{% url 'cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                    <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                     <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
                 </div>
             </div>
@@ -585,7 +447,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="main-menu">
                     <ul class="mobile-menu">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="demo1.html">Home</a></li>
                         <li>
                             <a href="shop-banner-sidebar.html">Shop</a>
                             <ul>
@@ -649,7 +511,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="stores">Vendor</a>
+                            <a href="vendor-dokan-store.html">Vendor</a>
                             <ul>
                                 <li>
                                     <a href="#">Store Listing</a>
@@ -704,6 +566,43 @@
                                 <li>
                                     <a href="post-single.html">Single Post</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="about-us.html">Pages</a>
+                            <ul>
+
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="become-a-vendor.html">Become A Vendor</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="faq.html">FAQs</a></li>
+                                <li><a href="error-404.html">Error 404</a></li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="my-account.html">My Account</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="elements.html">Elements</a>
+                            <ul>
+                                <li><a href="element-products.html">Products</a></li>
+                                <li><a href="element-titles.html">Titles</a></li>
+                                <li><a href="element-typography.html">Typography</a></li>
+                                <li><a href="element-categories.html">Product Category</a></li>
+                                <li><a href="element-buttons.html">Buttons</a></li>
+                                <li><a href="element-accordions.html">Accordions</a></li>
+                                <li><a href="element-alerts.html">Alert &amp; Notification</a></li>
+                                <li><a href="element-tabs.html">Tabs</a></li>
+                                <li><a href="element-testimonials.html">Testimonials</a></li>
+                                <li><a href="element-blog-posts.html">Blog Posts</a></li>
+                                <li><a href="element-instagrams.html">Instagrams</a></li>
+                                <li><a href="element-cta.html">Call to Action</a></li>
+                                <li><a href="element-vendors.html">Vendors</a></li>
+                                <li><a href="element-icon-boxes.html">Icon Boxes</a></li>
+                                <li><a href="element-icons.html">Icons</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -990,22 +889,22 @@
                 <div class="product-gallery product-gallery-sticky mb-0">
                     <div class="product-single-swiper swiper-container swiper-theme nav-inner row cols-1 gutter-no">
                         <figure class="product-image">
-                            <img src="assets/images/products/popup/1-440x494.jpg"
+                            <img src="{% static 'marketplace/images/products/popup/1-440x494.jpg' %}"
                                 data-zoom-image="assets/images/products/popup/1-800x900.jpg"
                                 alt="Water Boil Black Utensil" width="800" height="900">
                         </figure>
                         <figure class="product-image">
-                            <img src="assets/images/products/popup/2-440x494.jpg"
+                            <img src="{% static 'marketplace/images/products/popup/2-440x494.jpg' %}"
                                 data-zoom-image="assets/images/products/popup/2-800x900.jpg"
                                 alt="Water Boil Black Utensil" width="800" height="900">
                         </figure>
                         <figure class="product-image">
-                            <img src="assets/images/products/popup/3-440x494.jpg"
+                            <img src="{% static 'marketplace/images/products/popup/3-440x494.jpg' %}"
                                 data-zoom-image="assets/images/products/popup/3-800x900.jpg"
                                 alt="Water Boil Black Utensil" width="800" height="900">
                         </figure>
                         <figure class="product-image">
-                            <img src="assets/images/products/popup/4-440x494.jpg"
+                            <img src="{% static 'marketplace/images/products/popup/4-440x494.jpg' %}"
                                 data-zoom-image="assets/images/products/popup/4-800x900.jpg"
                                 alt="Water Boil Black Utensil" width="800" height="900">
                         </figure>
@@ -1013,19 +912,19 @@
                     <div class="product-thumbs-wrap">
                         <div class="product-thumbs">
                             <div class="product-thumb active">
-                                <img src="assets/images/products/popup/1-103x116.jpg" alt="Product Thumb" width="103"
+                                <img src="{% static 'marketplace/images/products/popup/1-103x116.jpg' %}" alt="Product Thumb" width="103"
                                     height="116">
                             </div>
                             <div class="product-thumb">
-                                <img src="assets/images/products/popup/2-103x116.jpg" alt="Product Thumb" width="103"
+                                <img src="{% static 'marketplace/images/products/popup/2-103x116.jpg' %}" alt="Product Thumb" width="103"
                                     height="116">
                             </div>
                             <div class="product-thumb">
-                                <img src="assets/images/products/popup/3-103x116.jpg" alt="Product Thumb" width="103"
+                                <img src="{% static 'marketplace/images/products/popup/3-103x116.jpg' %}" alt="Product Thumb" width="103"
                                     height="116">
                             </div>
                             <div class="product-thumb">
-                                <img src="assets/images/products/popup/4-103x116.jpg" alt="Product Thumb" width="103"
+                                <img src="{% static 'marketplace/images/products/popup/4-103x116.jpg' %}" alt="Product Thumb" width="103"
                                     height="116">
                             </div>
                         </div>
@@ -1039,12 +938,12 @@
                     <h2 class="product-title">Electronics Black Wrist Watch</h2>
                     <div class="product-bm-wrapper">
                         <figure class="brand">
-                            <img src="assets/images/products/brand/brand-1.jpg" alt="Brand" width="102" height="48" />
+                            <img src="{% static 'marketplace/images/products/brand/brand-1.jpg' %}" alt="Brand" width="102" height="48" />
                         </figure>
                         <div class="product-meta">
                             <div class="product-categories">
                                 Category:
-                                <span class="product-category"><a href="shop-banner-sidebar.html">Electronics</a></span>
+                                <span class="product-category"><a href="#">Electronics</a></span>
                             </div>
                             <div class="product-sku">
                                 SKU: <span>MS46891340</span>
@@ -1125,9 +1024,9 @@
                         </div>
                         <span class="divider d-xs-show"></span>
                         <div class="product-link-wrapper d-flex">
-                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"><span></span></a>
+                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"></a>
                             <a href="#"
-                                class="btn-product-icon btn-compare btn-icon-left w-icon-compare"><span></span></a>
+                                class="btn-product-icon btn-compare btn-icon-left w-icon-compare"></a>
                         </div>
                     </div>
                 </div>
@@ -1135,18 +1034,73 @@
         </div>
     </div>
     <!-- End of Quick view -->
-	    <!-- Plugin JS File -->
-		<script src="{% static 'marketplace/vendor/jquery/jquery.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/sticky/sticky.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/jquery.plugin/jquery.plugin.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/swiper/swiper-bundle.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/nouislider/nouislider.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/jquery.countdown/jquery.countdown.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/zoom/jquery.zoom.js' %}"></script>
-		<script src="{% static 'marketplace/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-	
-		<!-- Main JS -->
-		<script src="{% static 'marketplace/js/main.min.js' %}"></script>
+
+    <!-- Plugin JS File -->
+    <script src="{% static 'marketplace/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/sticky/sticky.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/jquery.plugin/jquery.plugin.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/jquery.countdown/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/zoom/jquery.zoom.js' %}"></script>
+    <script src="{% static 'marketplace/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'marketplace/js/main.min.js' %}"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script>
+
+        /*
+        Map Settings
+
+            Find the Latitude and Longitude of your address:
+                - https://www.latlong.net/
+                - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+
+        */
+
+        // Map Markers
+        var mapMarkers = [{
+            address: "New York, NY 10017",
+            html: "<strong>New York Office<\/strong><br>New York, NY 10017",
+            popup: true
+        }];
+
+        // Map Initial Location
+        var initLatitude = 40.75198;
+        var initLongitude = -73.96978;
+
+        // Map Extended Settings
+        var mapSettings = {
+            controls: {
+                draggable: !window.Wolmart.isMobile,
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                overviewMapControl: true
+            },
+            scrollwheel: false,
+            markers: mapMarkers,
+            latitude: initLatitude,
+            longitude: initLongitude,
+            zoom: 11
+        };
+
+        var map = $('#googlemaps').gMap(mapSettings);
+
+        // Map text-center At
+        var mapCenterAt = function (options, e) {
+            e.preventDefault();
+            $('#googlemaps').gMap("centerAt", options);
+        }
+
+    </script>
 </body>
+
+
+<!-- Mirrored from portotheme.com/html/wolmart/vendor-wcfm-store-product-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 13:19:39 GMT -->
 </html>

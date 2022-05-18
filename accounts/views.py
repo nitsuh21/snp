@@ -6,6 +6,10 @@ from django.core.mail import send_mail
 from .serializers import UserSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from knox.auth import AuthToken, TokenAuthentication
+from .serializers import RegisterSerializer
 
 from accounts import serializers
 
@@ -30,14 +34,14 @@ def signup(request):
         else:
             user = User.objects.create_user(username=username,password=password,email=email)
             user.save()
-            return redirect('login')
+            return redirect('signin')
     else:
         if request.user.is_authenticated:
-            return render(request,'home.html')
+            return render(request,'index.html')
         else:
             return render(request,'register.html')
         
-def login(request):
+def signin(request):
     if request.method == 'POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
@@ -51,16 +55,61 @@ def login(request):
         else:
             messages.info(request,'invalid credential')
             print('invalid')
-            return redirect('login')
+            return redirect('signin')
     else:
         if request.user.is_authenticated:
-            return render(request,'home.html')
+            return redirect('feed')
         else:
             return render(request,'login.html')
-        
+
+def signout(request):
+    auth.logout(request)
+    return redirect('signin')
+       
 def home(request):
     if request.user.is_authenticated:
-        return render(request,'home.html')
+        return render(request,'index.html')
     else:
-        return redirect('login')
-    
+        return redirect('signin')
+
+
+def serialize_user(user):
+    return {
+        "username": user.username,
+        "email": user.email,
+        "first_name": user.first_name,
+        "last_name": user.last_name
+    }
+
+@api_view(['POST'])
+def login(request):
+    serializer = AuthTokenSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    user = serializer.validated_data['user']
+    _, token = AuthToken.objects.create(user)
+    return Response({
+        'user_data': serialize_user(user),
+        'token': token
+    })
+        
+
+@api_view(['POST'])
+def register(request):
+    serializer = RegisterSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        user = serializer.save()
+        _, token = AuthToken.objects.create(user)
+        return Response({
+            "user_info": serialize_user(user),
+            "token": token
+        })
+
+
+@api_view(['GET'])
+def get_user(request):
+    user = request.user
+    if user.is_authenticated:
+        return Response({
+            'user_data': serialize_user(user)
+        })
+    return Response({})

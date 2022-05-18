@@ -1,0 +1,559 @@
+{% load static %}
+<header class="header header-border">
+    <div class="header-top">
+    </div>
+    <!-- End of Header Top -->
+    <div class="header-middle">
+        <div class="container">
+            <div class="header-left mr-md-4">
+                <a href="#" class="mobile-menu-toggle  w-icon-hamburger" aria-label="menu-toggle">
+                </a>
+                <a href="/" class="logo ml-lg-0">
+                    <img src="{% static 'marketplace/images/logo.png' %}" alt="logo" width="144" height="45" />
+                </a>
+                <form method="get" action="#" class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper">
+                    <div class="select-box">
+                        <select id="category" name="category">
+                            <option value="">All Categories</option>
+                            <option value="4">Fashion</option>
+                            <option value="5">Furniture</option>
+                            <option value="6">Shoes</option>
+                            <option value="7">Sports</option>
+                            <option value="8">Games</option>
+                            <option value="9">Computers</option>
+                            <option value="10">Electronics</option>
+                            <option value="11">Kitchen</option>
+                            <option value="12">Clothing</option>
+                        </select>
+                    </div>
+                    <input type="text" class="form-control" name="search" id="search"
+                        placeholder="Search in..." required />
+                    <button class="btn btn-search" type="submit"><i class="w-icon-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="header-right ml-4">
+                <div class="header-call d-xs-show d-lg-flex align-items-center">
+                    <a class="wishlist label-down link d-xs-show" href="{% url 'mystores' %}">
+                        <i class="w-icon-shopify"></i>
+                        <span class="wishlist-label d-lg-show">My shops</span>
+                    </a>
+                </div>
+                <a class="wishlist label-down link d-xs-show" href="wishlist.html">
+                    <i class="w-icon-account"></i>
+                    <span class="wishlist-label d-lg-show">My account</span>
+                </a>
+                <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
+                    <div class="cart-overlay"></div>
+                    <a href="{% url 'cart' %}" class="cart-toggle label-down link">
+                        <i class="w-icon-cart">
+                            <span class="cart-count">2</span>
+                        </i>
+                        <span class="cart-label">Cart</span>
+                    </a>
+                    <div class="dropdown-box">
+                        <div class="cart-header">
+                            <span>Shopping Cart</span>
+                            <a href="#" class="btn-close">Close<i class="w-icon-long-arrow-right"></i></a>
+                        </div>
+                        
+                        {% for product in cart %}
+                        <div class="products">
+                            <div class="product product-cart">
+                                <div class="product-detail">
+                                    <a href="product-default.html" class="product-name">{{product.product.name}}<br>{{product.product.category}}</a>
+                                    <div class="price-box">
+                                        <span class="product-quantity">1</span>
+                                        <span class="product-price">{{product.product.sale_price}} birr</span>
+                                    </div>
+                                </div>
+                                <figure class="product-media" style="min-height: 40px;max-height: 40px;">
+                                    <a href="product-default.html">
+                                        <img src="{{product.product.image.url}}" alt="product" style="min-height: 40px;max-height: 40px;"/>
+                                    </a>
+                                </figure>
+                                <button class="btn btn-link btn-close" aria-label="button">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="cart-total">
+                            <label>Subtotal:</label>
+                            <span class="price">$58.67</span>
+                        </div>
+
+                        <div class="cart-action">
+                            <a href="{% url 'cart' %}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                            <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
+                        </div>
+                    </div>
+                    <!-- End of Dropdown Box -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Header Middle -->
+
+    <div class="header-bottom sticky-content fix-top sticky-header">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="header-left">
+                    <div class="dropdown category-dropdown has-border" data-visible="true">
+                        <a href="#" class="category-toggle" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="true" data-display="static"
+                            title="Browse Categories">
+                            <i class="w-icon-category"></i>
+                            <span>Browse Categories</span>
+                        </a>
+
+                        <div class="dropdown-box">
+                            <ul class="menu vertical-menu category-menu">
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-tshirt2"></i>Fashion
+                                    </a>
+                                    <ul class="megamenu">
+                                        <li>
+                                            <h4 class="menu-title">Women's</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' '#' %}">New Arrivals</a>
+                                                </li>
+                                                <li><a href="{% url 'categories' 'dresses' %}">Dresses</a></li>
+                                                <li><a href="{% url 'categories' 'shoes' %}">Shoes</a></li>
+                                                <li><a href="{% url 'categories' 'skirts' %}">Skirts</a></li>
+                                                <li><a href="{% url 'categories' 't-shirts' %}">T-shirts</a></li>
+                                                <li><a href="{% url 'categories' 'shirts' %}">Shirts</a></li>
+                                                <li><a href="{% url 'categories' 'pants' %}">Pants</a></li>
+                                                <li><a href="{% url 'categories' 'bags' %}">Bags</a></li>
+                                                <li><a href="{% url 'categories' 'others' %}">Others</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4 class="menu-title">Men's</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' '#' %}">New Arrivals</a>
+                                                </li>
+                                                <li><a href="{% url 'categories' 'dresses' %}">Suits</a></li>
+                                                <li><a href="{% url 'categories' 'shoes' %}">Shoes</a></li>
+                                                <li><a href="{% url 'categories' 'jeans' %}">Jeans</a></li>
+                                                <li><a href="{% url 'categories' 'coats' %}">Coats</a></li>
+                                                <li><a href="{% url 'categories' 't-shirts' %}">T-shirts</a></li>
+                                                <li><a href="{% url 'categories' 'shirts' %}">Shirts</a></li>
+                                                <li><a href="{% url 'categories' 'bags' %}">Bags</a></li>
+                                                <li><a href="{% url 'categories' 'others' %}">Others</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4 class="menu-title">Accessories</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' '#' %}">New Arrivals</a>
+                                                </li>
+                                                <li><a href="{% url 'categories' 'shoes' %}">Watches</a></li>
+                                                <li><a href="{% url 'categories' 'skirts' %}">Cosmetics</a></li>
+                                                <li><a href="{% url 'categories' 'perfume' %}">Perfume</a></li>
+                                                <li><a href="{% url 'categories' 'jewelries' %}">Jewelries</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="banner-fixed menu-banner menu-banner2">
+                                                <figure>
+                                                    <img src="{% static 'marketplace/images/menu/banner-2.jpg' %}" alt="Menu Banner"
+                                                        width="235" height="347" />
+                                                </figure>
+                                                <div class="banner-content">
+                                                    <h3 class="banner-title ls-normal">Hot Sales</h3>
+                                                    <a href="shop-banner-sidebar.html"
+                                                        class="btn btn-dark btn-sm btn-link btn-slide-right btn-icon-right">
+                                                        Shop Now<i class="w-icon-long-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-electronics"></i>Electronics
+                                    </a>
+                                    <ul class="megamenu">
+                                        <li>
+                                            <h4 class="menu-title">Laptops &amp; Computers</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' 'desktop' %}">Desktop
+                                                        Computers</a></li>
+                                                <li><a href="{% url 'categories' 'monitors' %}">Monitors</a></li>
+                                                <li><a href="{% url 'categories' 'laptops' %}">Laptops</a></li>
+                                                <li><a href="{% url 'categories' 'hard_drives' %}">Hard Drives &amp;
+                                                        Storage</a></li>
+                                                <li><a href="{% url 'categories' 'computer_accessories' %}">Computer
+                                                        Accessories</a></li>
+                                            </ul>
+
+                                            <h4 class="menu-title mt-1">TV &amp; Video</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' 'tvs' %}">TVs</a></li>
+                                                <li><a href="{% url 'categories' 'digital_cameras' %}">Digital Cameras</a></li>
+                                                <li><a href="{% url 'categories' 'home_audio_speakers' %}">Home Audio
+                                                        Speakers</a></li>
+                                                <li><a href="{% url 'categories' 'projectors' %}">Projectors</a></li>
+                                                <li><a href="{% url 'categories' 'media_streaming' %}">Media Streaming
+                                                        Devices</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4 class="menu-title">Home Appliances</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' 'fridge' %}">Fridge</a></li>
+                                                <li><a href="{% url 'categories' 'oven' %}">Oven</a></li>
+                                                <li><a href="{% url 'categories' 'washing_machine' %}">Washing Machine</a>
+                                                </li>
+                                            </ul>
+
+                                            <h4 class="menu-title mt-1">Cell Phones</h4>
+                                            <hr class="divider">
+                                            <ul>
+                                                <li><a href="{% url 'categories' 'mobile_phones' %}">Mobile Phones</a>
+                                                </li>
+                                                <li><a href="{% url 'categories' 'earphones_and_headphones' %}">Earphones and Headphones</a>
+                                                </li>
+                                                <li><a href="{% url 'categories' 'chargers_and_cables' %}">Chargers and Cables</a></li>
+                                                <li><a href="{% url 'categories' 'flash_and_memorycards' %}">Flash and Memory Cards</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="menu-banner banner-fixed menu-banner4">
+                                                <figure>
+                                                    <img src="{% static 'marketplace/images/menu/banner-4.jpg' %}" alt="Menu Banner"
+                                                        width="235" height="433" />
+                                                </figure>
+                                                <div class="banner-content">
+                                                    <h4 class="banner-subtitle font-weight-normal">Buy and Sell</h4>
+                                                    <h3 class="banner-title text-white">Get you Favorites
+                                                    </h3>
+                                                    <div
+                                                        class="banner-price-info text-secondary font-weight-bolder text-uppercase text-secondary">
+                                                        Now</div>
+                                                    <a href="{% url 'categories' 'earphones_and_headphones' %}"
+                                                        class="btn btn-white btn-outline btn-sm btn-rounded">Shop
+                                                        </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-furniture"></i>Furniture
+                                    </a>
+                                    <ul class="megamenu type2">
+                                        <li class="row">
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Furniture</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'sofas_and_couches' %}">Sofas & Couches</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'armchairs' %}">Armchairs</a></li>
+                                                    <li><a href="{% url 'categories' 'bed_frames' %}">Bed Frames</a></li>
+                                                    <li><a href="{% url 'categories' 'beside_tables' %}">Beside Tables</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'dressing_tables' %}">Dressing Tables</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Lighting</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'light_bulbs' %}">Light Bulbs</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'lamps' %}">Lamps</a></li>
+                                                    <li><a href="{% url 'categories' 'celling_lights' %}">Celling Lights</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'wall_lights' %}">Wall Lights</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'bathroom' %}">Bathroom
+                                                            Lighting</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Home Accessories</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'decorative' %}">Decorative
+                                                            Accessories</a></li>
+                                                    <li><a href="{% url 'categories' 'candals_and_holders' %}">Candals &
+                                                            Holders</a></li>
+                                                    <li><a href="{% url 'categories' 'home_fragrance' %}">Home Fragrance</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'mirrors' %}">Mirrors</a></li>
+                                                    <li><a href="{% url 'categories' 'clocks' %}">Clocks</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Garden & Outdoors</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'garden' %}">Garden
+                                                            Furniture</a></li>
+                                                    <li><a href="{% url 'categories' 'lawn_mowers' %}">Lawn Mowers</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'pressure' %}">Pressure
+                                                            Washers</a></li>
+                                                    <li><a href="{% url 'categories' 'all_garden' %}">All Garden
+                                                            Tools</a></li>
+                                                    <li><a href="{% url 'categories' 'outdoor_dining' %}">Outdoor Dining</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-6">
+                                                <div class="banner banner-fixed menu-banner5 br-xs">
+                                                    <figure>
+                                                        <img src="{% static 'marketplace/images/menu/banner-5.jpg' %}" alt="Banner"
+                                                            width="410" height="123"
+                                                            style="background-color: #D2D2D2;" />
+                                                    </figure>
+                                                    <div class="banner-content text-right y-50">
+                                                        <h4
+                                                            class="banner-subtitle font-weight-normal text-default text-capitalize">
+                                                            New Arrivals</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="banner banner-fixed menu-banner5 br-xs">
+                                                    <figure>
+                                                        <img src="{% static 'marketplace/images/menu/banner-6.jpg' %}" alt="Banner"
+                                                            width="410" height="123"
+                                                            style="background-color: #9F9888;" />
+                                                    </figure>
+                                                    <div class="banner-content y-50">
+                                                        <h4
+                                                            class="banner-subtitle font-weight-normal text-white text-capitalize">
+                                                            Buy Now</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-furniture"></i>Grocery
+                                    </a>
+                                    <ul class="megamenu type2">
+                                        <li class="row">
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Baltena</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'sofas_and_couches' %}">Berbere</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'armchairs' %}">Shiro</a></li>
+                                                    <li><a href="{% url 'categories' 'bed_frames' %}">Kimema Kimem</a></li>
+                                                    <li><a href="{% url 'categories' 'beside_tables' %}">Atmit Duket</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'dressing_tables' %}">Dressing Tables</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Lighting</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'light_bulbs' %}">Light Bulbs</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'lamps' %}">Lamps</a></li>
+                                                    <li><a href="{% url 'categories' 'celling_lights' %}">Celling Lights</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'wall_lights' %}">Wall Lights</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'bathroom' %}">Bathroom
+                                                            Lighting</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Home Accessories</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'decorative' %}">Decorative
+                                                            Accessories</a></li>
+                                                    <li><a href="{% url 'categories' 'candals_and_holders' %}">Candals &
+                                                            Holders</a></li>
+                                                    <li><a href="{% url 'categories' 'home_fragrance' %}">Home Fragrance</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'mirrors' %}">Mirrors</a></li>
+                                                    <li><a href="{% url 'categories' 'clocks' %}">Clocks</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 col-lg-3 col-6">
+                                                <h4 class="menu-title">Garden & Outdoors</h4>
+                                                <hr class="divider" />
+                                                <ul>
+                                                    <li><a href="{% url 'categories' 'garden' %}">Garden
+                                                            Furniture</a></li>
+                                                    <li><a href="{% url 'categories' 'lawn_mowers' %}">Lawn Mowers</a>
+                                                    </li>
+                                                    <li><a href="{% url 'categories' 'pressure' %}">Pressure
+                                                            Washers</a></li>
+                                                    <li><a href="{% url 'categories' 'all_garden' %}">All Garden
+                                                            Tools</a></li>
+                                                    <li><a href="{% url 'categories' 'outdoor_dining' %}">Outdoor Dining</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-6">
+                                                <div class="banner banner-fixed menu-banner5 br-xs">
+                                                    <figure>
+                                                        <img src="{% static 'marketplace/images/menu/banner-5.jpg' %}" alt="Banner"
+                                                            width="410" height="123"
+                                                            style="background-color: #D2D2D2;" />
+                                                    </figure>
+                                                    <div class="banner-content text-right y-50">
+                                                        <h4
+                                                            class="banner-subtitle font-weight-normal text-default text-capitalize">
+                                                            New Arrivals</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="banner banner-fixed menu-banner5 br-xs">
+                                                    <figure>
+                                                        <img src="{% static 'marketplace/images/menu/banner-6.jpg' %}" alt="Banner"
+                                                            width="410" height="123"
+                                                            style="background-color: #9F9888;" />
+                                                    </figure>
+                                                    <div class="banner-content y-50">
+                                                        <h4
+                                                            class="banner-subtitle font-weight-normal text-white text-capitalize">
+                                                            Buy Now</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{% static 'categories' '' %}">
+                                        <i class="w-icon-heartbeat"></i>Healthy & Beauty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-gift"></i>Gift Ideas
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-gamepad"></i>Toy & Games
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-ice-cream"></i>Cooking
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-ios"></i>Smart Phones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-camera"></i>Cameras & Photo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-fullwidth-banner.html">
+                                        <i class="w-icon-ruby"></i>Accessories
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-banner-sidebar.html"
+                                        class="font-weight-bold text-primary text-uppercase ls-25">
+                                        View All Categories<i class="w-icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="main-nav">
+                        <ul class="menu active-underline">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="/marketplace">Marketplace</a>
+                            </li>
+                            <li>
+                                <a href="stores/">Vendor</a>
+                                <ul>
+                                    <li>
+                                        <a href="vendor-dokan-store-list.html">Store Listing</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'mystores' %}">My Stores</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/marketplace">Job Marketplace</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Blog</a>
+                                <ul>
+                                    <li><a href="blog.html">Classic</a></li>
+                                    <li><a href="blog-listing.html">Listing</a></li>
+                                    <li>
+                                        <a href="blog-grid-3cols.html">Grid</a>
+                                        <ul>
+                                            <li><a href="blog-grid-2cols.html">Grid 2 columns</a></li>
+                                            <li><a href="blog-grid-3cols.html">Grid 3 columns</a></li>
+                                            <li><a href="blog-grid-4cols.html">Grid 4 columns</a></li>
+                                            <li><a href="blog-grid-sidebar.html">Grid sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="blog-masonry-3cols.html">Masonry</a>
+                                        <ul>
+                                            <li><a href="blog-masonry-2cols.html">Masonry 2 columns</a></li>
+                                            <li><a href="blog-masonry-3cols.html">Masonry 3 columns</a></li>
+                                            <li><a href="blog-masonry-4cols.html">Masonry 4 columns</a></li>
+                                            <li><a href="blog-masonry-sidebar.html">Masonry sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="blog-mask-grid.html">Mask</a>
+                                        <ul>
+                                            <li><a href="blog-mask-grid.html">Blog mask grid</a></li>
+                                            <li><a href="blog-mask-masonry.html">Blog mask masonry</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="post-single.html">Single Post</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="d-xl-show"><i class="w-icon-map-marker mr-1"></i>Track Order</a>
+                    <a href="#"><i class="w-icon-sale"></i>Daily Deals</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
