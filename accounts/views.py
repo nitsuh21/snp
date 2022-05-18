@@ -2,23 +2,12 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from accounts.models import User
-from django.core.mail import send_mail
-from .serializers import UserSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.auth import AuthToken, TokenAuthentication
-from .serializers import RegisterSerializer
 
-from accounts import serializers
-
-# Create your api views here.
-@api_view(['GET'])
-def getUsers(request):
-    users = User.objects.all()
-    serializer = UserSerializer(users,many = True)
-    return Response(serializer.data)
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
