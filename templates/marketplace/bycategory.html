@@ -3,7 +3,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from portotheme.com/html/wolmart/shop-horizontal-filter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 May 2022 12:49:57 GMT -->
+<!-- Mirrored from portotheme.com/html/wolmart/shop-infinite-scroll.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 May 2022 12:49:59 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -36,7 +36,7 @@
         crossorigin="anonymous">
     <link rel="preload" href="{% static 'marketplace/vendor/fontawesome-free/webfonts/fa-brands-400.woff2' %}" as="font" type="font/woff2"
             crossorigin="anonymous">
-    <link rel="preload" href="{% static 'fonts/wolmart87d5.woff?png09e' %}" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="{% static 'marketplace/fonts/wolmart87d5.woff?png09e' %}" as="font" type="font/woff" crossorigin="anonymous">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'marketplace/vendor/fontawesome-free/css/all.min.css' %}">
@@ -59,7 +59,6 @@
         <!-- End of Header -->
 
 
-        <!-- Start of Main -->
         <main class="main">
             <!-- Start of Breadcrumb -->
             <nav class="breadcrumb-nav">
@@ -74,239 +73,104 @@
             <!-- End of Breadcrumb -->
 
             <!-- Start of Page Content -->
-            <div class="page-content mb-10">
+            <div class="page-content">
                 <div class="container">
-                    <div class="shop-default-brands mb-5">
-                        <div class="brands-swiper swiper-container swiper-theme "
-                            data-swiper-options="{
-                                'slidesPerView': 2,
-                                'breakpoints': {
-                                    '576': {
-                                        'slidesPerView': 3
-                                    },
-                                    '768': {
-                                        'slidesPerView': 4
-                                    },
-                                    '992': {
-                                        'slidesPerView': 6
-                                    },
-                                    '1200': {
-                                        'slidesPerView': 7
-                                    }
-                                },
-                                'autoplay': {
-                                    'delay': 4000,
-                                    'disableOnInteraction': false
-                                }
-                            }">
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!-- End of Shop Brands-->
-
-                    <!-- Start of Shop Category -->
-                    {% include 'partials/marketplace/categories.html' %}
+                        {% include 'partials/marketplace/categories.html' %}
                     <!-- End of Shop Category -->
 
-                    <div class="shop-content toolbox-horizontal">
-                        <!-- Start of Toolbox -->
-                        <nav class="toolbox sticky-toolbox sticky-content fix-top">
-                            <aside class="sidebar sidebar-fixed shop-sidebar">
-                                <div class="sidebar-overlay"></div>
-                                <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
-                                <div class="sidebar-content toolbox-left">
-                                    <!-- Start of Collapsible widget -->
-                                    <div class="toolbox-item select-menu">
-                                        <a class="select-menu-toggle" href="#">All Categories</a>
-                                        <ul class="filter-items">
-                                            <li><a href="#">Accessories</a></li>
-                                            <li><a href="#">Babies</a></li>
-                                            <li><a href="#">Beauty</a></li>
-                                            <li><a href="#">Decoration</a></li>
-                                            <li><a href="#">Electronics</a></li>
-                                            <li><a href="#">Fashion</a></li>
-                                            <li><a href="#">Food</a></li>
-                                            <li><a href="#">Furniture</a></li>
-                                            <li><a href="#">Kitchen</a></li>
-                                            <li><a href="#">Medical</a></li>
-                                            <li><a href="#">Sports</a></li>
-                                            <li><a href="#">Watches</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="toolbox-item select-menu">
-                                        <a class="select-menu-toggle" href="#">Price</a>
-                                        <ul class="filter-items">
-                                            <li><a href="#">$0.00 - $100.00</a></li>
-                                            <li><a href="#">$100.00 - $200.00</a></li>
-                                            <li><a href="#">$200.00 - $300.00</a></li>
-                                            <li><a href="#">$300.00 - $500.00</a></li>
-                                            <li><a href="#">$500.00+</a></li>
-                                            <li>
-                                                <form class="price-range">
-                                                    <input type="number" name="min_price" class="min_price text-center"
-                                                        placeholder="$min"><span class="delimiter">-</span><input
-                                                        type="number" name="max_price" class="max_price text-center"
-                                                        placeholder="$max"><a href="#"
-                                                        class="btn btn-primary btn-rounded">Go</a>
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="toolbox-item select-menu">
-                                        <a class="select-menu-toggle" href="#">Size</a>
-                                        <ul class="filter-items item-check">
-                                            <li><a href="#">Extra Large</a></li>
-                                            <li><a href="#">Large</a></li>
-                                            <li><a href="#">Medium</a></li>
-                                            <li><a href="#">Small</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="toolbox-item select-menu">
-                                        <a class="select-menu-toggle" href="#">Brand</a>
-                                        <ul class="filter-items item-check">
-                                            <li><a href="#">Elegant Auto Group</a></li>
-                                            <li><a href="#">Green Grass</a></li>
-                                            <li><a href="#">Node Js</a></li>
-                                            <li><a href="#">NS8</a></li>
-                                            <li><a href="#">Red</a></li>
-                                            <li><a href="#">Skysuite Tech</a></li>
-                                            <li><a href="#">Sterling</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="toolbox-item select-menu">
-                                        <a class="select-menu-toggle" href="#">Color</a>
-                                        <ul class="filter-items item-check">
-                                            <li><a href="#">Black</a></li>
-                                            <li><a href="#">Blue</a></li>
-                                            <li><a href="#">Brown</a></li>
-                                            <li><a href="#">Green</a></li>
-                                            <li><a href="#">Grey</a></li>
-                                            <li><a href="#">Orange</a></li>
-                                            <li><a href="#">Yellow</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- End of Collapsible Widget -->
-                                </div>
-                            </aside>
-                            <div class="toolbox-left">
-                                <div class="toolbox-item toolbox-sort select-menu">
+                    <div class="shop-content pb-10">
+                        <!-- Start of Shop Main Content -->
+                        <div class="main-content">
+                            <nav class="toolbox sticky-toolbox sticky-content fix-top">
+                                <div class="toolbox-left">
                                     <a href="#" class="btn btn-primary btn-outline btn-rounded left-sidebar-toggle 
-                                        btn-icon-left d-block d-lg-none"><i
-                                            class="w-icon-category"></i><span>Filters</span></a>
-                                    <select name="orderby" class="form-control">
-                                        <option value="default" selected="selected">Default sorting</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="rating">Sort by average rating</option>
-                                        <option value="date">Sort by latest</option>
-                                        <option value="price-low">Sort by pric: low to high</option>
-                                        <option value="price-high">Sort by price: high to low</option>
-                                    </select>
+                                        btn-icon-left"><i class="w-icon-category"></i><span>Filters</span></a>
+                                    <div class="toolbox-item toolbox-sort select-box text-dark">
+                                        <label>Sort By :</label>
+                                        <select name="orderby" class="form-control">
+                                            <option value="default" selected="selected">Default sorting</option>
+                                            <option value="popularity">Sort by popularity</option>
+                                            <option value="rating">Sort by average rating</option>
+                                            <option value="date">Sort by latest</option>
+                                            <option value="price-low">Sort by pric: low to high</option>
+                                            <option value="price-high">Sort by price: high to low</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="toolbox-right">
-                                <div class="toolbox-item toolbox-show select-box">
-                                    <select name="count" class="form-control">
-                                        <option value="12">Show 12</option>
-                                        <option value="24">Show 24</option>
-                                        <option value="36">Show 36</option>
-                                    </select>
-                                </div>
-                                <div class="toolbox-item toolbox-layout">
-                                    <a href="shop-horizontal-filter.html" class="icon-mode-grid btn-layout active">
-                                        <i class="w-icon-grid"></i>
-                                    </a>
-                                    <a href="shop-list.html" class="icon-mode-list btn-layout">
-                                        <i class="w-icon-list"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </nav>
-                        <!-- End of Toolbox -->
-
-                        <!-- Start of Selected Items -->
-                        <div class="selected-items mb-3">
-                            <a href="#" class="filter-clean text-primary">Clean All</a>
-                        </div>
-                        <!-- End of Selected Items -->
-
-                        <!-- Start of Product Wrapper -->
-                        <div class="product-wrapper row cols-lg-4 cols-md-3 cols-sm-2 cols-2">
-                            {% for product in products %}
-                            <div class="product-wrap">
-                                <div class="product text-center">
-                                    <figure class="product-media">
-                                        <a href="{% url 'productdetail' product.id %}">
-                                            <img src="{{product.image.url}}" alt="Product" style="min-height: 300px;max-height: 300px;"/>
+                                <div class="toolbox-right">
+                                    <div class="toolbox-item toolbox-show select-box">
+                                        <select name="count" class="form-control">
+                                            <option value="9">Show 9</option>
+                                            <option value="12" selected="selected">Show 12</option>
+                                            <option value="24">Show 24</option>
+                                            <option value="36">Show 36</option>
+                                        </select>
+                                    </div>
+                                    <div class="toolbox-item toolbox-layout">
+                                        <a href="shop-infinite-scroll.html" class="icon-mode-grid btn-layout active">
+                                            <i class="w-icon-grid"></i>
                                         </a>
-                                        <div class="product-action-horizontal">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
-                                                title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
-                                                title="Wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
-                                                title="Compare"></a>
-                                            <a href="#" class="btn-product-icon btn-quickview w-icon-search"
-                                                title="Quick View"></a>
-                                        </div>
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="product-cat">
-                                            <a href="shop-banner-sidebar.html">Electronics</a>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="product-default.html">3D Television</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                                <span class="ratings" style="width: 100%;"></span>
-                                                <span class="tooltiptext tooltip-top"></span>
+                                        <a href="shop-list.html" class="icon-mode-list btn-layout">
+                                            <i class="w-icon-list"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="product-wrapper row cols-md-4 cols-sm-3 cols-2 scroll-load">
+                                {% for product in products %}
+                                <div class="product-wrap" style="max-height: 600px;">
+                                    <div class="product text-center" >
+                                        <figure class="product-media">
+                                            <a href="{% url 'productdetail' product.id %}">
+                                                    <img src="{{ product.image.url }}" alt="Product" style="min-height: 300px;max-height: 300px;"/>
+                                            </a>
+                                            <div class="product-action-horizontal">
+                                                <a href="{% url 'addtocart' %}"
+                                                    title="Add to cart"> Add to cart</a>
+                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                    title="Wishlist"></a>
+                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                    title="Compare"></a>
+                                                <a href="#" class="btn-product-icon btn-quickview w-icon-search"
+                                                    title="Quick View"></a>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
-                                        </div>
-                                        <div class="product-pa-wrapper">
-                                            <div class="product-price">
-                                                $220.00 - $230.00
+                                        </figure>
+                                        <div class="product-details">
+                                            <div class="product-cat">
+                                                <a href="shop-banner-sidebar.html">{{product.type}}</a>
+                                            </div>
+                                            <h3 class="product-name">
+                                                <a href="product-default.html">{{product.name}}</a>
+                                            </h3>
+                                            <div class="ratings-container">
+                                                <div class="ratings-full">
+                                                    <span class="ratings" style="width: 75%;"></span>
+                                                    <span class="tooltiptext tooltip-top"></span>
+                                                </div>
+                                                <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            </div>
+                                            <div class="product-pa-wrapper">
+                                                <div class="product-price">
+                                                    {{product.sale_price}} birr
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
-                        <!-- End of Product Wrapper -->
+                        <!-- End of Shop Main Content -->
 
-                        <!-- Start of Pagination -->
-                        <div class="toolbox toolbox-pagination justify-content-between">
-                            <p class="showing-info mb-2 mb-sm-0">
-                                Showing<span>1-12 of 60</span>Products
-                            </p>
-                            <ul class="pagination">
-                                <li class="prev disabled">
-                                    <a href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                                        <i class="w-icon-long-arrow-left"></i>Prev
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="next">
-                                    <a href="#" aria-label="Next">
-                                        Next<i class="w-icon-long-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End of Pagination -->
+                        <!-- Start of Sidebar, Shop Sidebar -->
+                        {% include 'partials/marketplace/asidefilter.html' %}
+                        <!-- End of Shop Sidebar -->
                     </div>
+                    <!-- End of Shop Content -->
                 </div>
             </div>
             <!-- End of Page Content -->
         </main>
-        <!-- End of Main -->
-
         <!-- Start of Footer -->
         <footer class="footer appear-animate" data-animation-options="{
             'name': 'fadeIn'
@@ -315,26 +179,6 @@
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-xl-5 col-lg-6">
-                            <div class="icon-box icon-box-side text-white">
-                                <div class="icon-box-icon d-inline-flex">
-                                    <i class="w-icon-envelop3"></i>
-                                </div>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title text-white text-uppercase mb-0">Subscribe To Our
-                                        Newsletter</h4>
-                                    <p class="text-white">Get all the latest information on Events, Sales and Offers.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-9 mt-4 mt-lg-0 ">
-                            <form action="#" method="get"
-                                class="input-wrapper input-wrapper-inline input-wrapper-rounded">
-                                <input type="email" class="form-control mr-2 bg-white" name="email" id="email"
-                                    placeholder="Your E-mail Address" />
-                                <button class="btn btn-dark btn-rounded" type="submit">Subscribe<i
-                                        class="w-icon-long-arrow-right"></i></button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -407,80 +251,6 @@
                     </div>
                 </div>
                 <div class="footer-middle">
-                    <div class="widget widget-category">
-                        <div class="category-box">
-                            <h6 class="category-name">Consumer Electric:</h6>
-                            <a href="#">TV Television</a>
-                            <a href="#">Air Condition</a>
-                            <a href="#">Refrigerator</a>
-                            <a href="#">Washing Machine</a>
-                            <a href="#">Audio Speaker</a>
-                            <a href="#">Security Camera</a>
-                            <a href="#">View All</a>
-                        </div>
-                        <div class="category-box">
-                            <h6 class="category-name">Clothing & Apparel:</h6>
-                            <a href="#">Men's T-shirt</a>
-                            <a href="#">Dresses</a>
-                            <a href="#">Men's Sneacker</a>
-                            <a href="#">Leather Backpack</a>
-                            <a href="#">Watches</a>
-                            <a href="#">Jeans</a>
-                            <a href="#">Sunglasses</a>
-                            <a href="#">Boots</a>
-                            <a href="#">Rayban</a>
-                            <a href="#">Acccessories</a>
-                        </div>
-                        <div class="category-box">
-                            <h6 class="category-name">Home, Garden & Kitchen:</h6>
-                            <a href="#">Sofa</a>
-                            <a href="#">Chair</a>
-                            <a href="#">Bed Room</a>
-                            <a href="#">Living Room</a>
-                            <a href="#">Cookware</a>
-                            <a href="#">Utensil</a>
-                            <a href="#">Blender</a>
-                            <a href="#">Garden Equipments</a>
-                            <a href="#">Decor</a>
-                            <a href="#">Library</a>
-                        </div>
-                        <div class="category-box">
-                            <h6 class="category-name">Health & Beauty:</h6>
-                            <a href="#">Skin Care</a>
-                            <a href="#">Body Shower</a>
-                            <a href="#">Makeup</a>
-                            <a href="#">Hair Care</a>
-                            <a href="#">Lipstick</a>
-                            <a href="#">Perfume</a>
-                            <a href="#">View all</a>
-                        </div>
-                        <div class="category-box">
-                            <h6 class="category-name">Jewelry & Watches:</h6>
-                            <a href="#">Necklace</a>
-                            <a href="#">Pendant</a>
-                            <a href="#">Diamond Ring</a>
-                            <a href="#">Silver Earing</a>
-                            <a href="#">Leather Watcher</a>
-                            <a href="#">Rolex</a>
-                            <a href="#">Gucci</a>
-                            <a href="#">Australian Opal</a>
-                            <a href="#">Ammolite</a>
-                            <a href="#">Sun Pyrite</a>
-                        </div>
-                        <div class="category-box">
-                            <h6 class="category-name">Computer & Technologies:</h6>
-                            <a href="#">Laptop</a>
-                            <a href="#">iMac</a>
-                            <a href="#">Smartphone</a>
-                            <a href="#">Tablet</a>
-                            <a href="#">Apple</a>
-                            <a href="#">Asus</a>
-                            <a href="#">Drone</a>
-                            <a href="#">Wireless Speaker</a>
-                            <a href="#">Game Controller</a>
-                            <a href="#">View all</a>
-                        </div>
-                    </div>
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-left">
@@ -1232,19 +1002,21 @@
     <!-- End of Quick view -->
 
     <!-- Plugin JS File -->
-    <script src="{% static 'marketplace/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/sticky/sticky.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/jquery.plugin/jquery.plugin.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/swiper/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/nouislider/nouislider.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/jquery.countdown/jquery.countdown.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/zoom/jquery.zoom.js' %}"></script>
-    <script src="{% static 'marketplace/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-    <!-- Main JS -->
-    <script src="{% static 'marketplace/js/main.min.js' %}"></script>
+    <!-- Plugin JS File -->
+		<script src="{% static 'marketplace/vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/sticky/sticky.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/jquery.plugin/jquery.plugin.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/swiper/swiper-bundle.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/nouislider/nouislider.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/jquery.countdown/jquery.countdown.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/zoom/jquery.zoom.js' %}"></script>
+		<script src="{% static 'marketplace/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+	
+		<!-- Main JS -->
+		<script src="{% static 'marketplace/js/main.min.js' %}"></script>
 </body>
 
 
-<!-- Mirrored from portotheme.com/html/wolmart/shop-horizontal-filter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 May 2022 12:49:58 GMT -->
+<!-- Mirrored from portotheme.com/html/wolmart/shop-infinite-scroll.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 May 2022 12:50:00 GMT -->
 </html>

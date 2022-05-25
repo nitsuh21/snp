@@ -47,7 +47,7 @@
                     <div class="cart-overlay"></div>
                     <a href="{% url 'cart' %}" class="cart-toggle label-down link">
                         <i class="w-icon-cart">
-                            <span class="cart-count">2</span>
+                            <span class="cart-count">{{cartItems}}</span>
                         </i>
                         <span class="cart-label">Cart</span>
                     </a>
@@ -110,7 +110,7 @@
                         <div class="dropdown-box">
                             <ul class="menu vertical-menu category-menu">
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Fashion' %}">
                                         <i class="w-icon-tshirt2"></i>Fashion
                                     </a>
                                     <ul class="megamenu">
@@ -176,7 +176,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Electronics' %}">
                                         <i class="w-icon-electronics"></i>Electronics
                                     </a>
                                     <ul class="megamenu">
@@ -192,6 +192,7 @@
                                                         Storage</a></li>
                                                 <li><a href="{% url 'categories' 'computer_accessories' %}">Computer
                                                         Accessories</a></li>
+                                                <li><a href="{% url 'categories' 'games' %}">Games</a></li>
                                             </ul>
 
                                             <h4 class="menu-title mt-1">TV &amp; Video</h4>
@@ -211,6 +212,7 @@
                                             <hr class="divider">
                                             <ul>
                                                 <li><a href="{% url 'categories' 'fridge' %}">Fridge</a></li>
+                                                <li><a href="{% url 'categories' 'kitchen' %}">Kitchen</a></li>
                                                 <li><a href="{% url 'categories' 'oven' %}">Oven</a></li>
                                                 <li><a href="{% url 'categories' 'washing_machine' %}">Washing Machine</a>
                                                 </li>
@@ -348,7 +350,7 @@
                                 </li>
                                 
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Grocery' %}">
                                         <i class="w-icon-furniture"></i>Grocery
                                     </a>
                                     <ul class="megamenu type2">
@@ -368,120 +370,70 @@
                                                 </ul>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-6">
-                                                <h4 class="menu-title">Lighting</h4>
+                                                <h4 class="menu-title">Food</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="{% url 'categories' 'light_bulbs' %}">Light Bulbs</a>
+                                                    <li><a href="{% url 'categories' 'vegetables' %}">Vegetables</a>
                                                     </li>
-                                                    <li><a href="{% url 'categories' 'lamps' %}">Lamps</a></li>
-                                                    <li><a href="{% url 'categories' 'celling_lights' %}">Celling Lights</a>
+                                                    <li><a href="{% url 'categories' 'fruits' %}">Fruits</a></li>
+                                                    <li><a href="{% url 'categories' 'dairy_products' %}">Dairy Products</a>
                                                     </li>
-                                                    <li><a href="{% url 'categories' 'wall_lights' %}">Wall Lights</a>
+                                                    <li><a href="{% url 'categories' 'bakery' %}">Bakery</a>
                                                     </li>
-                                                    <li><a href="{% url 'categories' 'bathroom' %}">Bathroom
-                                                            Lighting</a></li>
+                                                    <li><a href="{% url 'categories' 'beverages' %}">Beverages</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-6">
-                                                <h4 class="menu-title">Home Accessories</h4>
+                                                <h4 class="menu-title">Cereals</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="{% url 'categories' 'decorative' %}">Decorative
+                                                    <li><a href="{% url 'categories' 'Teff' %}">Teff
                                                             Accessories</a></li>
-                                                    <li><a href="{% url 'categories' 'candals_and_holders' %}">Candals &
-                                                            Holders</a></li>
-                                                    <li><a href="{% url 'categories' 'home_fragrance' %}">Home Fragrance</a>
-                                                    </li>
-                                                    <li><a href="{% url 'categories' 'mirrors' %}">Mirrors</a></li>
-                                                    <li><a href="{% url 'categories' 'clocks' %}">Clocks</a></li>
+                                                    <li><a href="{% url 'categories' 'wheat' %}">Wheat</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-6">
-                                                <h4 class="menu-title">Garden & Outdoors</h4>
+                                                <h4 class="menu-title">Fish</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="{% url 'categories' 'garden' %}">Garden
-                                                            Furniture</a></li>
-                                                    <li><a href="{% url 'categories' 'lawn_mowers' %}">Lawn Mowers</a>
+                                                    <li><a href="{% url 'categories' 'garden' %}">Fish</a></li>
+                                                    <li><a href="{% url 'categories' 'lawn_mowers' %}">Tuna</a>
                                                     </li>
-                                                    <li><a href="{% url 'categories' 'pressure' %}">Pressure
-                                                            Washers</a></li>
-                                                    <li><a href="{% url 'categories' 'all_garden' %}">All Garden
-                                                            Tools</a></li>
-                                                    <li><a href="{% url 'categories' 'outdoor_dining' %}">Outdoor Dining</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="row">
-                                            <div class="col-6">
-                                                <div class="banner banner-fixed menu-banner5 br-xs">
-                                                    <figure>
-                                                        <img src="{% static 'marketplace/images/menu/banner-5.jpg' %}" alt="Banner"
-                                                            width="410" height="123"
-                                                            style="background-color: #D2D2D2;" />
-                                                    </figure>
-                                                    <div class="banner-content text-right y-50">
-                                                        <h4
-                                                            class="banner-subtitle font-weight-normal text-default text-capitalize">
-                                                            New Arrivals</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="banner banner-fixed menu-banner5 br-xs">
-                                                    <figure>
-                                                        <img src="{% static 'marketplace/images/menu/banner-6.jpg' %}" alt="Banner"
-                                                            width="410" height="123"
-                                                            style="background-color: #9F9888;" />
-                                                    </figure>
-                                                    <div class="banner-content y-50">
-                                                        <h4
-                                                            class="banner-subtitle font-weight-normal text-white text-capitalize">
-                                                            Buy Now</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{% static 'categories' '' %}">
+                                    <a href="{% url 'maincategories' 'Healthy & Beauty' %}">
                                         <i class="w-icon-heartbeat"></i>Healthy & Beauty
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Gift Ideas' %}">
                                         <i class="w-icon-gift"></i>Gift Ideas
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Toy & Games' %}">
                                         <i class="w-icon-gamepad"></i>Toy & Games
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Cooking' %}">
                                         <i class="w-icon-ice-cream"></i>Cooking
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="shop-fullwidth-banner.html">
-                                        <i class="w-icon-ios"></i>Smart Phones
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-fullwidth-banner.html">
-                                        <i class="w-icon-camera"></i>Cameras & Photo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-fullwidth-banner.html">
+                                    <a href="{% url 'maincategories' 'Accessories' %}">
                                         <i class="w-icon-ruby"></i>Accessories
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="shop-banner-sidebar.html"
+                                    <a href="/marketplace"
                                         class="font-weight-bold text-primary text-uppercase ls-25">
                                         View All Categories<i class="w-icon-angle-right"></i>
                                     </a>

@@ -1,0 +1,82 @@
+<aside class="sidebar shop-sidebar left-sidebar sticky-sidebar-wrapper">
+    <!-- Start of Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+    <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
+    <!-- Start of Sidebar Content -->
+    <div class="sidebar-content scrollable">
+        <div class="filter-actions">
+            <label>Filter :</label>
+            <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
+        </div>
+        <!-- Start of Collapsible widget -->
+        <div class="widget widget-collapsible">
+            <h3 class="widget-title"><span>All Categories</span></h3>
+            <ul class="widget-body filter-items search-ul">
+                <li><a href="{% url 'maincategories' 'Fashion' %}">Fashion</a></li>
+                <li><a href="{% url 'maincategories' 'Electronics' %}">Electronics</a></li>
+                <li><a href="{% url 'maincategories' 'Furniture' %}">Furniture</a></li>
+                <li><a href="{% url 'maincategories' 'Grocery' %}">Grocery</a></li>
+                <li><a href="{% url 'maincategories' 'Health & Beauty' %}">Health & Beauty</a></li>
+                <li><a href="{% url 'maincategories' 'Gift Ideas' %}">Gift Ideas</a></li>
+                <li><a href="{% url 'maincategories' 'Toys & Games' %}">Toys & Games</a></li>
+                <li><a href="{% url 'maincategories' 'Cooking' %}">Cooking</a></li>
+                <li><a href="{% url 'maincategories' 'Accessories' %}">Accessories</a></li>
+            </ul>
+        </div>
+        <!-- End of Collapsible Widget -->
+
+        <form action="/marketplace/maincategories/{{category}}/" method="post">
+            {% csrf_token %}
+        <!-- Start of Collapsible Widget -->
+        <input type="hidden" name="category" value="{{category}}">
+        <div class="widget widget-collapsible">
+            <h3 class="widget-title"><span>Price</span></h3>
+            <div class="widget-body">
+                    <input type="number" name="min_price" class="form-control min_price text-center"
+                        placeholder="min birr"><span class="delimiter">-</span><input type="number"
+                        name="max_price" class="form-control max_price text-center" placeholder="max birr">
+            </div>
+        </div>
+        <!-- End of Collapsible Widget -->
+        <!-- Start of Collapsible Widget -->
+        <div class="widget widget-collapsible">
+            <h3 class="widget-title"><span>Size</span></h3><br>
+                {% for siz in size %}
+                <div class="form-check">
+                    <input class="widget-body filter-items item-check mt-1" type="checkbox" value="{{siz}}" id="size" name="size">
+                    <label class="form-check-label" for="size">{{siz}}</label>
+                  </div>
+                {% endfor %}
+        </div>
+        <!-- End of Collapsible Widget -->
+
+        <!-- Start of Collapsible Widget -->
+        <div class="widget widget-collapsible">
+            <h3 class="widget-title"><span>Brand</span></h3><br>
+            {% for bran in brand %}
+            <div class="form-check">
+                <input class="widget-body filter-items item-check mt-1" type="checkbox" value="{{bran}}" id="brand" name="brand">
+                <label class="form-check-label" for="brand">{{bran}}</label>
+              </div>
+            {% endfor %}
+        </div>
+        <!-- End of Collapsible Widget -->
+
+        <!-- Start of Collapsible Widget -->
+        <div class="widget widget-collapsible">
+            <h3 class="widget-title"><span>Color</span></h3><br>
+                {% for col in color %}
+                <div class="form-check">
+                    <input class="widget-body filter-items item-check mt-1" type="checkbox" value="{{col}}" id="color" name="color">
+                    <label class="form-check-label" for="color">{{col}}</label>
+                  </div>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- End of Collapsible Widget -->
+        <br>
+        <button class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+    <!-- End of Sidebar Content -->
+</aside>

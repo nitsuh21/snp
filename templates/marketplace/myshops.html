@@ -86,28 +86,19 @@
                             <a href="#" class="btn btn-primary btn-outline btn-rounded btn-icon-left vendor-search-toggle "><i class="w-icon-category"></i>CREATE NEW STORE</a>
                             <label class="d-block">You have <strong>this much</strong> stores</label>
                         </div>
-                        <div class="toolbox-right">
-                            <div class="toolbox-item toolbox-sort select-box mb-0">
-                                <label class="font-weight-normal">Sort by:</label>
-                                <select name="orderby" class="form-control">
-                                    <option value="default" selected="selected">Default</option>
-                                    <option value="recent">Most Recent</option>
-                                    <option value="popular">Most Popular</option>
-                                </select>
-                            </div>
-                            <div class="toolbox-item toolbox-layout mb-0 d-flex">
-                                <a href="./storesgrid.html" class="icon-mode-grid btn-layout">
-                                    <i class="w-icon-grid"></i>
-                                </a>
-                                <a href="vendor-dokan-store-list.html" class="icon-mode-list btn-layout active">
-                                    <i class="w-icon-list"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <!-- End of Vendor Toolbox -->
 
                     <!-- Start of Vendor Search Wrapper -->
+                    {% for message in messages %}
+                    <br>
+                        <div class="alert alert-danger">
+                            <a class="close" href="{% url 'mystores' %}" data-dismiss="alert">×</a>
+                            <Strong style="color: brown;">{{ message }}</Strong>
+                        </div>
+                    <br>
+                    {% endfor %}
+                    {% if shops %}
                     <div class="vendor-search-wrapper">
                         <form class="vendor-search-form" action="/marketplace/createshop" method="post">
                             {% csrf_token %}
@@ -125,6 +116,25 @@
                         </form>
                         <!-- End of Vendor Search Form -->
                     </div>
+                    {% else %}
+                    <div class="">
+                        <form class="" action="/marketplace/createshop" method="post">
+                            {% csrf_token %} <br>
+                            <input type="text" class="form-control mr-4 bg-white" required="true" name="name" id="vendor"
+                                placeholder="Shop Name" /> <br>
+                                <input type="email" class="form-control mr-4 bg-white" required="true" name="email" id="vendor"
+                                placeholder="Email" /> <br>
+                                <input type="text" class="form-control mr-4 bg-white" required="true" name="country" id="vendor"
+                                placeholder="country" /> <br>
+                                <input type="text" class="form-control mr-4 bg-white" required="true" name="city" id="vendor"
+                                placeholder="city" /> <br>
+                                <input type="tell" class="form-control mr-4 bg-white" required="true" name="phonenumber" id="vendor"
+                                placeholder="Phone Number" /> <br>
+                            <button class="btn btn-primary btn-rounded" type="submit">Create</button>
+                        </form>
+                        <!-- End of Vendor Search Form -->
+                    </div>
+                    {% endif %}
                     <!-- End of Vendor Search Wrapper -->
                     {% for shop in shops %}
                     <div class="store store-list mt-4">

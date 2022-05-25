@@ -43,4 +43,7 @@ def get_user(request):
         return Response({
             'user_data': serialize_user(user)
         })
-    return Response({})
+    else:
+        return Response({
+            'user_data': serialize_user(user)
+        })
